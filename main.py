@@ -6,5 +6,18 @@ print("""1- Add Todo
 5- Exit""")
 print("-----------------")
 
-user_action = input("Enter your option: ").capitalize()
-print(user_action)
+todo_list = []
+
+while True:
+    user_action = input("Enter your option: ").strip()
+
+    match user_action:
+        case 'add':
+            todo_task = input("Enter a Todo task: ") + '\n'
+            todo_list.append(todo_task)
+            print("Task is added in the list.")
+        case 'show':
+            for task in todo_list:
+                print(task)
+        case 'exit':
+            break
