@@ -17,7 +17,10 @@ while True:
             todo_list.append(todo_task)
             print("Task is added in the list.")
         case 'show':
-            for task in todo_list:
-                print(task)
+            for index, task in enumerate(todo_list):
+                print(index, task)
+        case 'edit':
+            todo_num = int(input("Enter todo number: ")) - 1
+            todo_list[todo_num] = input("Enter edited task: ") + "\n"
         case 'exit':
             break
