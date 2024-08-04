@@ -18,9 +18,13 @@ while True:
             print("Task is added in the list.")
         case 'show':
             for index, task in enumerate(todo_list):
-                print(index, task)
+                print(f'{index + 1} - {task.strip("\n")}')
         case 'edit':
             todo_num = int(input("Enter todo number: ")) - 1
             todo_list[todo_num] = input("Enter edited task: ") + "\n"
+        case 'complete':
+            todo_num = int(input("Enter todo number: ")) - 1
+            com_task = todo_list.pop(todo_num)
+            print(f"[{com_task}]this task is complete.")
         case 'exit':
             break
